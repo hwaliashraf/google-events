@@ -1,18 +1,21 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
+import AddEvents from './screens/AddEvents';
+import Login from './screens/Login';
 
 const App = () => {
+  const {Navigator, Screen} = createNativeStackNavigator();
   return (
-    <SafeAreaView style={styles.sectionContainer}>
-      <StatusBar barStyle="auto" />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Navigator
+        screenOptions={{headerShown: false}}
+        initialRouteName={'Login'}>
+        <Screen name="Login" component={Login} />
+        <Screen name="Home" component={AddEvents} />
+      </Navigator>
+    </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  sectionContainer: {
-    flex: 1,
-  },
-});
 
 export default App;
