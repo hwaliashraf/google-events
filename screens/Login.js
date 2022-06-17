@@ -1,5 +1,4 @@
 import {View} from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import React, {useEffect} from 'react';
 import Container from '../components/Container';
 import styles from './styles';
@@ -21,16 +20,12 @@ const Login = ({navigation}) => {
   const signIn = async () => {
     try {
       await GoogleSignin.hasPlayServices();
-      const {accessToken, idToken, user} = await GoogleSignin.signIn();
+      const {accessToken, idToken} = await GoogleSignin.signIn();
       const credential = auth.GoogleAuthProvider.credential(
         idToken,
         accessToken,
       );
       await auth().signInWithCredential(credential);
-      if (user?.id) {
-        await AsyncStorage.setItem('userInfo', JSON.stringify(user));
-        navigation.navigate('AddEvents');
-      }
     } catch (error) {
       console.log(error.message);
     }
