@@ -12,7 +12,7 @@ const App = () => {
         screenOptions={{headerShown: false}}
         initialRouteName={'Login'}>
         <Screen name="Login" component={Login} />
-        <Screen name="Home" component={AddEvents} />
+        <Screen name="AddEvents" component={AddEvents} />
       </Navigator>
     </NavigationContainer>
   );
