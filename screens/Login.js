@@ -7,9 +7,9 @@ import {
   GoogleSigninButton,
 } from '@react-native-google-signin/google-signin';
 import auth from '@react-native-firebase/auth';
-import {WEB_CLIENT_ID} from '../constants';
+import {WEB_CLIENT_ID} from '@env';
 
-const Login = ({navigation}) => {
+const Login = () => {
   useEffect(() => {
     GoogleSignin.configure({
       webClientId: WEB_CLIENT_ID,
