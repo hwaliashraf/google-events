@@ -5,7 +5,7 @@ import styles from '../screens/styles';
 const DatePickerButtons = ({
   title,
   setTitle,
-  AddCalenderEvent,
+  addCalenderEvent,
   startDate,
   endDate,
   setStartDatePicker,
@@ -62,7 +62,7 @@ const DatePickerButtons = ({
       <View style={styles.buttonContainer}>
         <Button
           title="Add to calender"
-          onPress={AddCalenderEvent}
+          onPress={addCalenderEvent}
           color="#837DFF"
         />
       </View>

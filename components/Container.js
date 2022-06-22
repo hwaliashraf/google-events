@@ -2,7 +2,6 @@ import React from 'react';
 import {SafeAreaView, StatusBar, StyleSheet} from 'react-native';
 
 const Container = props => {
-  console.log(props);
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar

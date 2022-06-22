@@ -27,7 +27,7 @@ const AddEvents = () => {
     time: new Date(),
   });
 
-  const AddCalenderEvent = () => {
+  const addCalenderEvent = () => {
     const startDateString = JSON.stringify(startDate.date).slice(1, 11);
     const startTimeString = JSON.stringify(startDate.time).slice(11, 25);
     const endDateString = JSON.stringify(endDate.date).slice(1, 11);
@@ -70,7 +70,7 @@ const AddEvents = () => {
   const DatePickerButtonsProps = {
     title,
     setTitle,
-    AddCalenderEvent,
+    addCalenderEvent,
     startDate,
     endDate,
     setStartDatePicker,
